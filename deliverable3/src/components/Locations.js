@@ -17,29 +17,41 @@ const Locations = () => {
         axios.get(`https://rickandmortyapi.com/api/location/${random}/`).then((res)=> setLocation(res.data));
     },[]);
 
-    console.log(locations);
+    // console.log(locations);
     // console.log(id)
+
     const searchLocations = () =>{
-
-        
-
+       
+        if( id <= 126 ){
         axios.get(`https://rickandmortyapi.com/api/location/${id}/`).then((res)=> setLocation(res.data));
+        }else{
+            alert("This only have 126 id to show")
+        }
+
     };
 
 
     return (
         <div>
             <h1>{locations.name}</h1>
+            <div className='This'>
+            <p>Type: {locations.type}</p>
+            <p>Dimension : {locations.dimension}</p>
+            <p>Population: {locations.residents?.length}</p>
+            </div>
             <div>
-                <input type="text"onChange={(e) => setId(e.target.value)} value={id} />
+                <input  type="number"
+                        onChange={(e) => setId(e.target.value)} 
+                        value={id} 
+                />
                 <button onClick={searchLocations}>Search</button>
                 <ul>
                     {locations.residents?.map(resident => (
-                        <div>{resident}</div>
-                    )) }
+                       <Residents url={resident} key={resident} />
+                    ))}
 
                 </ul>
-                <Residents />
+                
             </div>
         </div>
     );
