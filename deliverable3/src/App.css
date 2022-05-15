@@ -2,7 +2,69 @@
   text-align: center;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/***********************Component Locations********************************/
+
+.locations {
+  color: white;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  height: 180px;
+  background-color: rgba(248, 248, 248, 0.164);
+  border-radius: 5px;
+}
+
+.contentThis {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* justify-content: space-around; */
+}
+
+
 .This{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pepito {
   display: flex;
   justify-content: space-around;
 }
+
+button {
+  background-color: rgb(0, 255, 0);
+  border-color: white;
+}
+input{
+  background-color: rgba(248, 248, 248, 0.164);
+  border-color: white;
+}
+
+.contentInputAndButton {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+/*
+ .contentInput {
+   height: 35px;
+   display: flex;
+   flex-direction: row;
+ } */
+
+/***********************Component Resident********************************/
