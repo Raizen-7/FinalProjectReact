@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Residents from './Residents';
+import ResidentInfo from './ResidentInfo';
+
 
 const Locations = () => {
+ 
     //Hook de control de estados de la localización obtenida de la API.
-    const [locations, setLocation] = useState({});
+    const [locations, setLocations] = useState({});
+
+    const [loading, setLoading] = useState(true)
 
     const [id, setId] = useState("");
 
@@ -14,7 +18,8 @@ const Locations = () => {
         // Contante que guarda los ID consultados de forma aleatorioa desde la API
         const random = Math.floor(Math.random() * 126) + 1;
         //
-        axios.get(`https://rickandmortyapi.com/api/location/${random}/`).then((res) => setLocation(res.data));
+        axios.get(`https://rickandmortyapi.com/api/location/${random}/`).then((res) => {setLocations(res.data)
+        setLoading(false)});
     }, []);
 
     // console.log(locations);
@@ -23,12 +28,20 @@ const Locations = () => {
     const searchLocations = () => {
 
         if (id <= 126) {
-            axios.get(`https://rickandmortyapi.com/api/location/${id}/`).then((res) => setLocation(res.data));
+            axios.get(`https://rickandmortyapi.com/api/location/${id}/`).then((res) => setLocations(res.data));
         } else {
             alert("This only have 126 id to show")
         }
 
-    };
+        };
+        if (loading) {
+            return(
+                  <div>
+                        <h2>LOADING........</h2>
+                  </div>
+            )
+ 
+      } else {    
 
 
     return (
@@ -40,15 +53,15 @@ const Locations = () => {
                 <div className='contentThis'>
                     <div className='This'>
                         <div className='pepito'>
-                        <p>Type: {locations.type}</p>
-                        <p>Dimension : {locations.dimension}</p>
-                        <p>Population: {locations.residents?.length}</p>
+                            <p>Type: {locations.type}</p>
+                            <p>Dimension : {locations.dimension}</p>
+                            <p>Population: {locations.residents?.length}</p>
                         </div>
                         <div className='contentInputAndButton'>
                             <div className='contentInput'>
                                 <input type="number"
                                     onChange={(e) => setId(e.target.value)}
-                                    value={id} />
+                                    value={id} name="number"/>
                                 <button onClick={searchLocations}>Search</button>
                             </div>
                         </div>
@@ -60,11 +73,11 @@ const Locations = () => {
 
                 </div>
 
-                <div>
+                <div className='residents' >
 
                     <ul>
                         {locations.residents?.map(resident => (
-                            <Residents url={resident} key={resident} />
+                            <ResidentInfo url={resident} key={resident} />
                         ))}
                     </ul>
                 </div>
@@ -72,7 +85,7 @@ const Locations = () => {
             
 
         </main>
-    );
+    )};
 };
 
 export default Locations;

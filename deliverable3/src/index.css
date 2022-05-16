@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./img/3188810442_28d366135d.jpg");
-  /* background-repeat: no-repeat; */
+  background-image: url("./img/Sky-night-rotation-space-background.webp");
+  background-position:center top;
   color: aliceblue;
 }
 
