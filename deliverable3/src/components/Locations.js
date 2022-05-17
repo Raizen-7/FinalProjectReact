@@ -48,7 +48,7 @@ const Locations = () => {
 
     return (
         <main>
-            <h1>RICK & MORTY</h1>
+            <h1>Rick & Morty</h1>
             <h2 className='locations'>{locations.name}</h2>
 
             <div className='content'>
