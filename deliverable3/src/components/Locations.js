@@ -8,8 +8,10 @@ const Locations = () => {
     //Hook de control de estados de la localización obtenida de la API.
     const [locations, setLocations] = useState({});
 
+    //hook de carga
     const [loading, setLoading] = useState(true)
 
+    //hook para el el boton
     const [id, setId] = useState("");
 
 
@@ -46,7 +48,8 @@ const Locations = () => {
 
     return (
         <main>
-            <h1 className='locations'>{locations.name}</h1>
+            <h1>RICK & MORTY</h1>
+            <h2 className='locations'>{locations.name}</h2>
 
             <div className='content'>
 
