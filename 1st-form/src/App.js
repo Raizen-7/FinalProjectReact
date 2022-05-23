@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Modals from './components/Modals';
 import TodosForm from './components/TodosForm';
 import TodosList from './components/TodosList';
 
@@ -69,8 +70,13 @@ console.log(tasks);
     setTasks([ ...tasks ]);*/
   };
 
+  // no usar nombres genericos, ser bien descritivos
+  const [showModal, setShowModal] = useState(false); // esto es un nombre generico
+  
   return (
     <div className="App">
+      <button onClick={() => setShowModal(true)}>Abrir Modal</button>
+      {showModal && <Modals close={()=> setShowModal(false) } />}
       <TodosForm 
         addTask={addTask}
         tasksSelected={tasksSelected}
