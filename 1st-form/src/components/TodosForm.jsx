@@ -10,7 +10,7 @@ const TodosForm = (
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [completed, setCompleted] = useState(false)
+    const [isCompleted, setIsCompleted] = useState(false)
 
     console.log(tasksSelected);
 
@@ -18,21 +18,20 @@ const TodosForm = (
         if(tasksSelected !== null){
             setTitle(tasksSelected.title);
             setDescription(tasksSelected.description);
-            setCompleted(tasksSelected.completed);
+            setIsCompleted(tasksSelected.completed);
         }else{
             setTitle("");
             setDescription("");
-            setCompleted("");
+            setIsCompleted(false);
         };
     }, [tasksSelected])
 
     const submit = (e)=> {
         e.preventDefault();
          const task = { 
-             id : Date.now(),
             title,
             description,
-            completed
+            isCompleted
         }
         if(tasksSelected === null ){
             addTask(task);
@@ -73,8 +72,8 @@ const TodosForm = (
                 <input
                     type = "checkbox"
                     id = "is-completed"
-                    onChange = {e => setCompleted(e.target.checked )}
-                    checked = {completed} /*checked es el equivalente a value en checkbox */
+                    onChange = {e => setIsCompleted(e.target.checked )}
+                    checked = {isCompleted} /*checked es el equivalente a value en checkbox */
                 />
             </div>
             <button>Sudmit</button>

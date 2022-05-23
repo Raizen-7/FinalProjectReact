@@ -15,7 +15,7 @@ const TodosList = (
                     <li key={task.id}>
                         <h3>{task.title}</h3>
                         <p><b>Description</b>: {task.description}</p>
-                        <p><b>Completed</b>: { task.completed.toString() }</p>
+                        <p><b>Is Completed</b>: { task.isCompleted?.toString() }</p>
                         <button onClick={()=> removeTasks(task.id)}>
                             Delete XD
                         </button>
