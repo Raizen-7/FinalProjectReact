@@ -1,17 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 const Home = () => {
+
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+        // const redirect = ()=>{
+    //    navigate("/Contact");
+    // }
+
+    const submit = e => {
+        e.preventDefault();
+        if(password === "Avanzar"){
+            navigate("/About")   
+        } else {
+            alert("La contraseña es incorrecta")
+        }
+    }
+
+
+
     return (
-        <div className="App">
-            <nav>
-            <Link to="/Contact">Contanto</Link>
-            <Link to="/About">About ME</Link>
-            <Link to="/Projects">Projects</Link>
-            <Link to="/Tecnologies">Tecnologies</Link>
-            </nav>
+        <div className="Home">
             <h1>Ruta Principal</h1>
+            <form action='' onSubmit={submit}>
+                <input type="text" 
+                    value = {password} 
+                    onChange = {e => setPassword(e.target.value)}
+                />
+                <button> Submit </button>
+            </form>
+            <Link to="/Team/Lisy">Lisy</Link>
+            <Link to="/Projects/25">Projects</Link>
 
         </div>
     );

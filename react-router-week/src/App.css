@@ -1,38 +1,71 @@
-.App {
+nav{
+  height: 20px;
+  display: flex;
+  padding: 8px;
+  justify-content:center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav a{
+  margin: 3px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+footer{
   display: flex;
+  padding: 8px;
+  justify-content:center;
+  text-align: center;
+}
+/*****************************Home*********************************/
+
+.Home {
+  display: flex;
+  text-align: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/*****************************About********************************/
+
+.About {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*****************************Contacto********************************/
+
+.Contact{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*****************************Projets********************************/
+
+.Projets{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*****************************Tecnologies********************************/
+
+.Tecnologies{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/********************************Team***********************************/
+
+.Team {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
 }

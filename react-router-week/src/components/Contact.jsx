@@ -1,14 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Contact = () => {
+    
+    const navigate = useNavigate();
+    
     return (
-        <div>
-            <nav>
-                <Link to="/">HOME</Link>
-            </nav>
+        <div className='Contact'>
             <h1>Contacto</h1>
-            <input type="text" />
+            <button onClick={ () => navigate(-1) }> Volver </button>
+            <input type="pass" />
             <button>Envíar</button>  
         </div>
     );

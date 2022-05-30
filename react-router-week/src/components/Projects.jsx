@@ -1,16 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Projets = () => {
+
+    const { projects } = useParams();
+
     return (
-        <div>
-            <nav>
-                <Link to="/">HOME</Link>
-            </nav>
-           <h1>Titulos</h1>
-           <p>Descripción del proyecto</p>
+
+        <div className='Projets'>
+           <h1>Titulos </h1>
+           <p>Descripción del proyecto {projects} </p>
         </div>
+
     );
 };
 
-export default Projets;<h1>Sobre Nosotros</h1>
+export default Projets;
