@@ -19,7 +19,7 @@ const Home = () => {
     }, [dispatch])
     
     const filterProduct = () =>{
-        dispatch(filterProducts("Bravia"));
+        dispatch(filterProducts(search));
     }
 
     return (
@@ -46,9 +46,6 @@ const Home = () => {
                     <Card onClick={() => navigate(`/Product/${product.id}`)}>
                         {product.title}
                         <img src={product.productImgs[0]} alt="" />
-                        <Card>
-                            {/* {product.description} */}
-                        </Card>
                     </Card>
                 ))
             }
